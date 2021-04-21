@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-import { Search } from './Search';
-
 export function Recipes() {
     const [recipes, setRecipes] = React.useState([]);
     const [search, setSearch] = React.useState('');
