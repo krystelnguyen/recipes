@@ -6,8 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { Router, Route, Switch } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 
-import { About } from './About';
-import { Details } from './Details';
+import { About } from './components/About';
+import { Details } from './components/Details';
 
 ReactDOM.render(
   <BrowserRouter>

@@ -2,8 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import { AnimateSharedLayout } from "framer-motion";
 
-import { Navbar } from './Navbar';
-import { Recipes } from './Recipes';
+import { Navbar } from './components/Navbar';
+import { Recipes } from './components/Recipes';
 
 function App() {
   return (

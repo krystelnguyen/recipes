@@ -1,7 +1,7 @@
 import React from 'react';
 import { AnimateSharedLayout } from "framer-motion";
 
-import { Navbar } from './Navbar';
+import { Navbar } from './components/Navbar';
 
 export function Details(props) {
     const [recipe, setRecipe] = React.useState([]);
