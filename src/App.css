@@ -99,7 +99,7 @@ a {
   color:black;
 }
 
-input[type="text"] {
+.search {
   align-self: flex-end;
   margin : 0 50px 10px 0;
 }

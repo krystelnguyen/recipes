@@ -5,9 +5,12 @@ export function Recipes() {
     const [recipes, setRecipes] = React.useState([]);
     const [search, setSearch] = React.useState('');
 
-    const handleSearch = event => {
+    const handleInput = event => {
         setSearch(event.target.value);
-        fetch("https://tasty.p.rapidapi.com/recipes/list?from=0&tags="+ search.replace(" ", "%20"), {
+    }
+
+    const handleSearch = () => {
+        fetch("https://tasty.p.rapidapi.com/recipes/list?from=0&q="+ search, {
             "method": "GET",
             "headers": {
                 "x-rapidapi-key": "d0b7b29ca4msh94b90b80a5d55eap1e5c0bjsn8b5eddae1715",
@@ -17,7 +20,6 @@ export function Recipes() {
         .then((response) => response.json()).then((recipes) => {
             setRecipes(recipes.results);
         });
-        
     }
 
     React.useEffect(() => {
@@ -36,7 +38,7 @@ export function Recipes() {
 
     return (
         <>
-            <input type="text" placeholder="Search..." onChange={(event) => handleSearch(event)} />
+            <div class="search"><input type="text" placeholder="Search..." onChange={(event) => handleInput(event)} /> <button onClick={handleSearch}>OK</button></div>
             {recipes ?
                 <>
                 {recipes.length > 0 ?
