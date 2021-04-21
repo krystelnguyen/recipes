@@ -1,7 +1,7 @@
 import React from 'react';
 import { AnimateSharedLayout } from "framer-motion";
 
-import { Navbar } from './components/Navbar';
+import { Navbar } from './Navbar';
 
 export function Details(props) {
     const [recipe, setRecipe] = React.useState([]);
@@ -30,6 +30,7 @@ export function Details(props) {
                 <div>
                     <h1>{recipe.name}</h1>
                     <div class="container">
+                        <p>{recipe.description}</p>
                         <h2>Instructions</h2>
                         <ol>
                             {recipe.instructions.map((instruction) => <li>{instruction.display_text}</li>)}

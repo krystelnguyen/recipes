@@ -2,7 +2,8 @@ import React from 'react';
 
 export function Search() {
     const [search, setSearch] = React.useState('');
-    const [autocomplete, setAutocomplete] = React.useState([]);
+
+    
 
     React.useEffect(() => {
         fetch("https://tasty.p.rapidapi.com/recipes/auto-complete?prefix=", {
@@ -13,16 +14,13 @@ export function Search() {
             }
         })
         .then((response) => response.json()).then((list) => {
-            setAutocomplete(list);
+            setSearch(list);
         });
     }, []);
 
     return (
         <>
-            <input type="text" onChange={event => (
-                setSearch(event.target.value);
-                
-            )} />
+            <input type="text" onChange={event => setSearch(event.target.value)} />
         </>
     );
 }

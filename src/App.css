@@ -102,3 +102,8 @@ a {
   text-decoration: none;
   color:black;
 }
+
+input[type="text"] {
+  align-self: flex-end;
+  margin : 0 50px 10px 0;
+}
