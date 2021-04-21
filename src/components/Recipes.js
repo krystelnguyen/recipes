@@ -7,7 +7,7 @@ export function Recipes() {
 
     const handleSearch = event => {
         setSearch(event.target.value);
-        fetch("https://tasty.p.rapidapi.com/recipes/list?size=20&name=*"+ search.replace(" ", "%20")+"*", {
+        fetch("https://tasty.p.rapidapi.com/recipes/list?from=0&tags="+ search.replace(" ", "%20"), {
             "method": "GET",
             "headers": {
                 "x-rapidapi-key": "d0b7b29ca4msh94b90b80a5d55eap1e5c0bjsn8b5eddae1715",
@@ -17,8 +17,7 @@ export function Recipes() {
         .then((response) => response.json()).then((recipes) => {
             setRecipes(recipes.results);
         });
-
-        console.log(recipes);
+        
     }
 
     React.useEffect(() => {
